@@ -1,4 +1,5 @@
 const path = require('path')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 module.exports = {
   mode: 'production', // 默认production
@@ -7,5 +8,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'bundle.js'
-  }
+  },
+  plugins: [
+    BundleAnalyzerPlugin()
+  ]
 }
